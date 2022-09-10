@@ -11,12 +11,9 @@ from tensorflow.keras.preprocessing import image
 
 app = Flask(__name__)
 
-#dic = {0: 'Cat', 1: 'Dog'}
-
 model = load_model('AnimalClassification.h5')
 class_indices = np.load('class_labels.npy', allow_pickle=True).item()
 
-#model.make_predict_function()
 
 def predict_label(img_path):
 	im = image.load_img(img_path, target_size=(240, 240))
@@ -28,7 +25,6 @@ def predict_label(img_path):
 	
 	im = im.reshape(1,240,240,3)
 	
-	#p = model.predict_classes(i)
 	single_pred = np.squeeze(model.predict(im))
 	
 	results_dict = dict(zip(class_indices.keys(), single_pred))
@@ -75,4 +71,5 @@ def get_output():
 if __name__ == '__main__':
 	# app.debug = True
 	# app.run(debug = True)
+	# app.run(host='0.0.0.0',debug=True)
 	app.run()
