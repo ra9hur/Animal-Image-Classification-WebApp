@@ -11,7 +11,7 @@ A simple website where users can post an image of an animal and get the name as 
 **2. Dataset Selection**
 -------------
 
-Imagenet dataset has 1000 classes and predominantly covers around 400 animal categories. However, this dataset fails to detect a human. Hence, just a pre-trained model using Imagenet is not sufficient and should be trained using a custom dataset.
+Imagenet dataset has 1000 classes and predominantly covers around 400 animal categories. However, this dataset fails to detect a human. Hence, just a pre-trained model using Imagenet is not sufficient and a model should be trained using a custom dataset.
 
 The dataset used here is [Animal Image Dataset (90 Different Animals)](https://www.kaggle.com/datasets/iamsouravbanerjee/animal-image-dataset-90-different-animals) from Kaggle.
 This is a balanced dataset consisting of 5400 images in 90 different classes. This again does not include human images. [Human Detection Dataset](https://www.kaggle.com/datasets/constantinwerner/human-detection-dataset) from Kaggle helped to fill this gap. This dataset includes 559 human and 362 non-human images.
